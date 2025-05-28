@@ -1,0 +1,63 @@
+/* Positive Theme (Warm) */
+.layout[data-theme="three-panes-positive"] {
+  --primary-bg: #fff5e6; /* Warm cream */
+  --sidebar-bg: #ffe8cc; /* Light peach */
+  --text-color: #4a2c00; /* Dark brown */
+  --title-color: #e67e22; /* Warm orange */
+  --link-color: #d35400; /* Deep orange */
+  --link-hover: #e67e22; /* Lighter orange */
+  --border-color: #e6b800; /* Golden border */
+}
+
+.layout[data-theme="three-panes-positive"] .block.left,
+.layout[data-theme="three-panes-positive"] .block.right {
+  background: var(--sidebar-bg);
+}
+
+.layout[data-theme="three-panes-positive"] .block.content {
+  background: var(--primary-bg);
+}
+
+.layout[data-theme="three-panes-positive"] .element.title {
+  color: var(--title-color);
+}
+
+.layout[data-theme="three-panes-positive"] .section.navigation a {
+  color: var(--link-color);
+}
+
+.layout[data-theme="three-panes-positive"] .section.navigation a:hover {
+  color: var(--link-hover);
+}
+
+/* Negative Theme (Cool/Dark) */
+.layout[data-theme="three-panes-negative"] {
+  --primary-bg: #e6e6e6; /* Light gray */
+  --sidebar-bg: #b3c6d6; /* Soft blue-gray */
+  --text-color: #1a252f; /* Dark slate */
+  --title-color: #2c3e50; /* Darker blue-gray */
+  --link-color: #34495e; /* Slate */
+  --link-hover: #3498db; /* Bright blue */
+  --border-color: #95a5a6; /* Gray border */
+}
+
+.layout[data-theme="three-panes-negative"] .block.left,
+.layout[data-theme="three-panes-negative"] .block.right {
+  background: var(--sidebar-bg);
+}
+
+.layout[data-theme="three-panes-negative"] .block.content {
+  background: var(--primary-bg);
+}
+
+.layout[data-theme="three-panes-negative"] .element.title {
+  color: var(--title-color);
+}
+
+.layout[data-theme="three-panes-negative"] .section.navigation a {
+  color: var(--link-color);
+}
+
+.layout[data-theme="three-panes-negative"] .section.navigation a:hover {
+  color: var(--link-hover);
+}
