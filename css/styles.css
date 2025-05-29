@@ -1,0 +1,337 @@
+/* Reset default margins and padding for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the page takes the full viewport height */
+    font-family: sans-serif;
+  background: #444444;
+  color: #333333;
+}
+
+/* Header and banner */
+header {
+  width: 100%;
+}
+
+
+
+
+ CSS variables for theming 
+:root {
+  --primary-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+  --item-bg: #ffffff;
+  --text-color: #333333;
+  --title-color: #333333;
+  --link-color: #555555;
+  --link-hover: #3c75cc;
+  --title-font: 'Garamond', serif;
+  --subtitle-font: 'Merriweather', serif;
+  --content-font: sans-serif;
+  --meta-font: 'Playfair Display', serif;
+}
+
+
+
+
+
+.banner {
+  height: 12rem;
+  background: url('../assets/images/books.JPG') no-repeat center;
+  background-size: cover;
+  background-position: center 75%; /* Adjust based on testing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #eeeeee;
+  position: relative; /* For overlay */
+}
+
+/* Add a semi-transparent overlay to improve text contrast */
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay, adjust opacity as needed */
+  z-index: 1;
+}
+
+/* Ensure text stays above the overlay */
+.banner-text {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-text h1, .banner-text p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Improve readability */
+}
+
+
+.banner-text {
+  text-align: center;
+}
+
+
+
+
+.banner-text h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+.banner-text p {
+  font-size: 2rem;
+  margin: 0.25rem 0 0;
+  color: #ffffff;
+}
+
+/* Navigation */
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+.menu {
+  background: #333333;
+  position: relative;
+  padding: 0; /* Add vertical padding for breathing room */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.menu li {
+  margin: 0.48rem 0.6rem 0rem 0.8rem;
+    display: inline;
+}
+
+
+
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  font-size: 0.96rem;
+  font-weight: 500;
+  letter-spacing: 0.033em;
+  font-family: 'Source Sans Pro', 'Verdana', 'Arial', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+.menu a:hover {
+  color: #d0d0d0; /* Slightly lighter gray on hover for feedback */
+  text-decoration: underline;
+}
+
+/* top right bottom left */
+
+
+/* Layout container */
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 0.2rem;
+ flex: 1;   /*  Ensure the layout takes the remaining height after header and menu */
+}
+
+/* Blocks (left sidebar, main content, right sidebar) */
+.block {
+  padding: 2rem; /* Basic spacing inside each block */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.block.left {
+  flex: 1 1 21.6%; /* Left sidebar: 20% width */
+   padding: 1.2%;
+   background: #ffffff;
+   transition: transform 0.3s ease; /* For swipe animation */
+ 
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  margin:0.12%;
+}
+
+.block.content {
+ /* Main content: 56% width */
+  flex: 2 1 56%;
+  padding: 1.2%;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  margin:0.12%;
+}
+
+.block.right {
+   flex: 1 1 21.6%; /* Left sidebar: 20% width */
+   padding: 1.2%;
+   background: #ffffff;
+   border: 1px solid #cccccc;
+   transition: transform 0.3s ease; /* For swipe animation */
+   border-radius: 6px;
+   margin:0.12%;
+}
+
+/* Sections within blocks */
+.section {
+  margin-bottom: 1.25em; /* Space between sections */
+  border-bottom: 1px solid #cccccc; 
+  padding: 0.6em;
+}
+
+/* Elements within sections */
+.element {
+  margin-bottom: 0.8rem; /* Space between elements */
+}
+
+.section.navigation {
+position: relative;
+}	
+
+
+.element ul {
+  list-style: none;
+  padding: 0;
+}
+.element.substance li {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1;
+  list-style: none;
+  align: left;
+}
+
+.element li a {
+  color: #777777;
+  text-decoration: none;
+  list-style: none;
+}
+
+.element li a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+/* Ensure buttons in the settings section are laid out side by side */
+
+/* Settings buttons */
+.element.substance .theme-toggle,
+.element.substance .layout-toggle {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 0.5rem 1rem;
+  background: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.element.substance .theme-toggle:hover,
+.element.substance .layout-toggle:hover {
+  background: #555555;
+}
+
+
+
+
+
+/* Ensure the last element in a section has no bottom margin */
+.element:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border: 1px solid #cccccc;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+  
+    .block left, .content, .block right {
+    flex: 1 1 100%;
+  }
+  .content {
+    order: -1;
+  }
+  .block left {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 70%;
+    transform: translateX(-100%);
+  }
+  .block right {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    transform: translateX(100%);
+  }
+  .block left.open, .block right.open {
+    transform: translateX(0);
+  }
+  .element title { 
+  font-size: 1.1rem; 
+  font-family: Garamond, serif;
+  }
+.section.element author { font-size: 0.9rem; }
+  
+  .element subtitle { font-size: 0.9rem; }
+  .element substance { font-size: 0.875rem; }
+  .element meta { font-size: 0.75rem; }
+}
